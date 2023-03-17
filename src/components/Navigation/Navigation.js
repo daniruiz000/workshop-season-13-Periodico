@@ -14,7 +14,6 @@ const Navigation = ({setPageSelected}) => {
             <Link to={'/news/economics/'}><Button onClick={()=>setPageSelected(1)}>Economía</Button></Link>
         </>
     )
-
 }
 
 export default Navigation;

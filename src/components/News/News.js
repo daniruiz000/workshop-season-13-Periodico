@@ -2,14 +2,15 @@ import './News.css';
 import {
     Text,
     Flex,
-    Button
+    Button,
+    
 } from '@chakra-ui/react';
 
 import {
-    NavLink
+    Link
 } from 'react-router-dom'
 
-const News = () => {
+const News = ({setPageSelected}) => {
 
     return (
         <Flex direction={'column'}>
@@ -18,16 +19,16 @@ const News = () => {
 
                 <Flex direction={'column'} >
                     <Button colorScheme={'blue'}>
-                        <NavLink to='/news/sport/'>Deportes</NavLink>
+                    <Link to={'/news/sport/'}><Button onClick={()=>setPageSelected(1)}>Deportes</Button></Link>
                     </Button>
                     <Text>Encuentra las ultimas noticias sobre tu deporte favorito, desde futbol hasta tenis, baloncesto, golf y mucho más.</Text>
                 </Flex>
                 <Flex direction={'column'}>
-                    <NavLink to='/news/tech/'>Tecnología</NavLink>
+                <Link to={'/news/tech/'}><Button onClick={()=>setPageSelected(1)}>Tecnología</Button></Link>
                     <Text>Mantente al día con las últimas tendencias tecnológicas, desde dispositivos móviles a </Text>
                 </Flex>
                 <Flex direction={'column'}>
-                    <NavLink to='/news/economics/'>Economía</NavLink>
+                <Link to={'/news/economics/'}><Button onClick={()=>setPageSelected(1)}>Economía</Button></Link>
                     <Text>Descubre las noticias económicas, desde mercados financieros hasta empresas, negocios y mucho más.</Text>
                 </Flex>
             </Flex>
@@ -39,3 +40,6 @@ const News = () => {
 }
 
 export default News;
+
+
+
