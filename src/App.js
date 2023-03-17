@@ -8,7 +8,7 @@ import News from './components/News/News'
 import NotFound from './components/NotFound/NotFound';
 import Section from './components/Section/Section';
 
-const App = ()=> {
+const App = () => {
 
   const [pageSelected, setPageSelected] = React.useState(1)
 
@@ -21,14 +21,13 @@ const App = ()=> {
           <Homepage />}>
         </Route>
         <Route path='/news' element={
-          <News setPageSelected={setPageSelected}/>}>
+          <News setPageSelected={setPageSelected} />}>
         </Route>
         <Route path='/news/:topic/' element={
           <Section pageSelected={pageSelected} setPageSelected={setPageSelected} />}>
         </Route>
         <Route path='*' element={
-          <NotFound />
-        }>
+          <NotFound />}>
         </Route>
       </Routes>
 
