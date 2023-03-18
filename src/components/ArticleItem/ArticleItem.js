@@ -1,8 +1,5 @@
 import { Button, Flex, Image,Text } from "@chakra-ui/react";
 
-
-
-
 const ArticleItem = ({article})=>{
 
     return(
