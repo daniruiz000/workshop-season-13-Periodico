@@ -12,7 +12,7 @@ const ArticleItem = ({article})=>{
             <Text>{article.summary}</Text>
             <Text>{article.published_date}{article.author}</Text>
             <Button>
-                <Link to={article.link}>Leer noticia completa</Link>
+                <a href={article.link} target='_blank'>Leer noticia completa</a>
             </Button>
         </Flex>
     )
