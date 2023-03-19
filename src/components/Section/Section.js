@@ -2,7 +2,6 @@ import './Section.css'
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Button, Flex, Text, Input, Grid } from '@chakra-ui/react';
-import ArticleItem from '../ArticleItem/ArticleItem';
 import { AuthContext } from '../../App';
 
 const Section = ({ setPageSelected, pageSelected }) => {
@@ -15,6 +14,7 @@ const Section = ({ setPageSelected, pageSelected }) => {
 
     const authInfo = React.useContext(AuthContext)
 
+    const ArticleItem = React.lazy(() => import('../ArticleItem/ArticleItem'))
 
     const callAPI = (page, topic) => {
 
@@ -66,7 +66,11 @@ const Section = ({ setPageSelected, pageSelected }) => {
 
                 <Grid templateColumns='repeat(1, 1fr)' gap={2} alignItems="center" alignContent={'baseline'}>
                     <Flex wrap={'wrap'} alignItems={'center'} justify={'space-around'}>
-                        {newsListFiltered.map(article => <ArticleItem key={article._id} article={article} />)}
+                        {newsListFiltered.map(article =>
+                            <React.Suspense fallback='Cargando...'>
+                                <ArticleItem key={article._id} article={article} />
+                            </React.Suspense>
+                        )}
                     </Flex>
                 </Grid>
 
