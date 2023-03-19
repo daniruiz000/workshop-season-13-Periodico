@@ -3,23 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ChakraBaseProvider } from '@chakra-ui/react';
+import { ChakraBaseProvider} from '@chakra-ui/react';
 import { BrowserRouter } from 'react-router-dom'
+import chakraTheme from '@chakra-ui/theme'
 
+const theme =  chakraTheme
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <ChakraBaseProvider>
+  <ChakraBaseProvider theme= {theme}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </ChakraBaseProvider>
-
-
-
-
-
 
 );
 
